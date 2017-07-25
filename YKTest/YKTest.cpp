@@ -29,22 +29,38 @@ void createTaskControl(IModel*& i_model)
 	desc.clear();
 }
 
-void selectTaskControl(int& o_index)
-{	
-	std::cin >> o_index;	
+void selectTaskControl(unsigned int& o_index)
+{
+	for(;;)
+	{
+		//validate if input matches variable type
+		if(std::cin >> o_index)
+			break;
+		//else clear buffer to allow std input to wait for input again
+		std::cin.clear();
+		std::cin.ignore(INT_MAX,'\n'); //include <limits> for gcc
+	}	
 }
 
 void editDescriptionControl(std::string& o_desc)
 {		
-	std::cin >> o_desc;
+	for(;;)
+	{
+		//validate if input matches variable type
+		if(std::cin >> o_desc)
+			break;
+		//else clear buffer to allow std input to wait for input again
+		std::cin.clear();
+		std::cin.ignore(INT_MAX,'\n'); //include <limits> for gcc
+	}	
 }
 
-int editTaskControl(IModel*& i_model, int i_index, std::string i_desc)
+int editTaskControl(IModel*& i_model, unsigned int i_index, std::string i_desc)
 {	
 	return i_model->updateTask(i_index, i_desc.c_str());	
 }
 
-int deleteTaskControl(IModel*& i_model, int i_index)
+int deleteTaskControl(IModel*& i_model, unsigned int i_index)
 {
 	return i_model->deleteTask(i_index);
 }
@@ -65,7 +81,7 @@ void createTaskView(IModel*& i_model)
 
 void editTaskView(IModel*& i_model)
 {
-	int index=0;
+	unsigned int index=0;
 	std::string desc;
 	std::cout << taskselect_message;				
 	selectTaskControl(index);
@@ -80,7 +96,7 @@ void editTaskView(IModel*& i_model)
 
 void deleteTaskView(IModel*& i_model)
 {
-	int index=0;
+	unsigned int index=0;
 	std::string desc;
 	std::cout << taskselect_message;				
 	selectTaskControl(index);	
