@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YKTest", "YKTest\YKTest.vcxproj", "{10EEA6CE-8F94-4F6D-8F48-F6CD64DB96B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YKTestModel", "YKTestModel\YKTestModel.vcxproj", "{A1EE5EA2-B324-41E3-93AC-7ECE7B275767}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10EEA6CE-8F94-4F6D-8F48-F6CD64DB96B8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{10EEA6CE-8F94-4F6D-8F48-F6CD64DB96B8}.Debug|Win32.Build.0 = Debug|Win32
+		{10EEA6CE-8F94-4F6D-8F48-F6CD64DB96B8}.Release|Win32.ActiveCfg = Release|Win32
+		{10EEA6CE-8F94-4F6D-8F48-F6CD64DB96B8}.Release|Win32.Build.0 = Release|Win32
+		{A1EE5EA2-B324-41E3-93AC-7ECE7B275767}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1EE5EA2-B324-41E3-93AC-7ECE7B275767}.Debug|Win32.Build.0 = Debug|Win32
+		{A1EE5EA2-B324-41E3-93AC-7ECE7B275767}.Release|Win32.ActiveCfg = Release|Win32
+		{A1EE5EA2-B324-41E3-93AC-7ECE7B275767}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
