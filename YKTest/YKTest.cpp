@@ -12,11 +12,12 @@ const char* menu_message="MENU\n====\n[1] Create task \n[2] Edit task \n[3] Dele
 const char* menuselect_message = "\nSelect an option [1-6] > ";
 const char* newtask_message = "Please enter a description for new task: ";
 const char* taskselect_message = "Please select a task: ";
+const char* taskcreatesuccess_message = "> Create successful ";
 const char* taskedit_message = "Please enter a description for edited task: ";
-const char* taskeditsuccess_message = "Edit successful ";
-const char* taskeditfailure_message = "Edit failed ";
-const char* taskdeletesuccess_message = "Delete successful ";
-const char* taskdeletefailure_message = "Delete failed ";
+const char* taskeditsuccess_message = "> Edit successful ";
+const char* taskeditfailure_message = "> Edit failed ";
+const char* taskdeletesuccess_message = "> Delete successful ";
+const char* taskdeletefailure_message = "> Delete failed ";
 const char* taskempty_message = "No tasks created yet ";
 
 //controllers
@@ -77,6 +78,7 @@ void createTaskView(IModel*& i_model)
 {
 	std::cout << newtask_message;
 	createTaskControl(i_model);
+	std::cout << taskcreatesuccess_message;
 }
 
 void editTaskView(IModel*& i_model)
@@ -140,7 +142,15 @@ void runLoop(IModel*& i_model)
 	do
 	{		
 		std::cout << menuselect_message;
-		std::cin >> input;
+		for(;;)
+		{
+			//validate if input matches variable type
+			if(std::cin >> input)
+				break;
+			//else clear buffer to allow std input to wait for input again
+			std::cin.clear();
+			std::cin.ignore(INT_MAX,'\n'); //include <limits> for gcc
+		}
 		switch (input)
 		{
 		case 1: createTaskView(i_model);
