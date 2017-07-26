@@ -5,4 +5,8 @@ To compile the project, open the project solution, <i>YKTest.sln</i>, using Visu
 If the build has no errors, the build should produce <i>YKTest.exe</i> in the Debug folder of the working copy.
 
 ## Running the program
-To run the program, execute YKTest.exe in the Release folder. 
+To run the program, execute YKTest.exe in the Release folder, on Windows. 
+
+## Known dependency issues
+If the program raises errors that mention some files missing, or missing side-by-side assemblies, please download and install Microsoft Visual C++ 2012 Runtime Redistributable at Microsoft website.
+
